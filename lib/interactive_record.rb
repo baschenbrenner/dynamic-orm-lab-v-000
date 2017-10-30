@@ -39,6 +39,6 @@ class InteractiveRecord
   end
 
   def save
-    DB[:conn].execute("INSERT INTO #{table_name_for_insert} (name,grade) VALUES (?,?)", self.name, self.grade)
+    DB[:conn].execute("INSERT INTO #{table_name_for_insert} (#{col_names_for_insert}) VALUES (?,?)", self.name, self.grade)
   end
 end
