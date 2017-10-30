@@ -49,4 +49,11 @@ class InteractiveRecord
     DB[:conn].execute("SELECT * FROM #{table_name} WHERE name=?", name)
   end
 
+  def self.find_by(attribute)
+    binding.pry
+    column_to_search = attribute.key
+    value_value_to_search_for = attribute.value
+    DB[:conn].execute("SELECT * FROM #{table_name} WHERE name=?", name)
+  end
+
 end
